@@ -186,6 +186,22 @@ a:focus-visible, button:focus-visible {
 
 .nav__cta .btn { padding: .65rem 1.4rem; }
 
+/* ---------- Language toggle in nav ---------- */
+.nav .lang-toggle {
+  color: var(--cream);                 /* transparent hero state: light text */
+  text-shadow: 0 1px 6px rgba(0,0,0,.4);
+  margin: 0 0 0 .2rem; order: 3;       /* sits after the CTA button */
+  opacity: .9;
+}
+.nav .lang-toggle:hover { opacity: 1; }
+.nav.is-solid .lang-toggle { color: var(--ink); text-shadow: none; }
+.nav__toggle { order: 4; }             /* hamburger stays last */
+
+@media (max-width: 1024px) {
+  /* nav__links + nav__cta hidden here; keep toggle beside the hamburger */
+  .nav .lang-toggle { margin-left: 0; margin-right: .35rem; }
+}
+
 .nav__toggle {
   display: none; flex-direction: column; gap: 5px; background: none; border: none;
   cursor: pointer; padding: 8px; z-index: 1100;

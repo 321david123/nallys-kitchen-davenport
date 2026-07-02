@@ -184,19 +184,31 @@
     });
   }
 
-  /* ---------- Highlight current open day in hours ---------- */
+  /* ---------- Highlight today's row ONLY when actually open now ---------- */
   try {
-    var hours = document.getElementById("hours");
-    if (hours) {
-      var rows = hours.querySelectorAll("tr");
-      var dayIdx = new Date().getDay(); // 0 Sun .. 6 Sat
-      // table order: Mon(0)..Sun(6)
-      var map = { 1: 0, 2: 1, 3: 2, 4: 3, 5: 4, 6: 5, 0: 6 };
-      var rowIndex = map[dayIdx];
-      if (rows[rowIndex] && !rows[rowIndex].querySelector(".closed")) {
-        var now = new Date();
-        var mins = now.getHours() * 60 + now.getMinutes();
-        if (mins >= 630 && mins <= 1200) rows[rowIndex].classList.add("is-now"); // 10:30–20:00
+    var rows = document.querySelectorAll("#hours tbody tr");
+    if (rows.length) {
+      // open/close in minutes from midnight; close > 1440 = runs past midnight.
+      // Sunday closed (no entry). Mon–Sat 10:30 AM – 8:00 PM.
+      var HRS = {
+        1: { o: 630, c: 1200 },  // Mon 10:30 AM – 8:00 PM
+        2: { o: 630, c: 1200 },  // Tue 10:30 AM – 8:00 PM
+        3: { o: 630, c: 1200 },  // Wed 10:30 AM – 8:00 PM
+        4: { o: 630, c: 1200 },  // Thu 10:30 AM – 8:00 PM
+        5: { o: 630, c: 1200 },  // Fri 10:30 AM – 8:00 PM
+        6: { o: 630, c: 1200 }   // Sat 10:30 AM – 8:00 PM
+      };
+      var d = new Date();
+      var day = d.getDay();                       // 0 Sun .. 6 Sat
+      var now = d.getHours() * 60 + d.getMinutes();
+      var open = false;
+      var t = HRS[day];
+      if (t && now >= t.o && now < Math.min(t.c, 1440)) open = true;  // today's shift, up to midnight
+      var yt = HRS[(day + 6) % 7];                                    // yesterday
+      if (yt && yt.c > 1440 && now < (yt.c - 1440)) open = true;      // still open from last night's late close
+      if (open) {
+        var rowIndex = day === 0 ? 6 : day - 1;   // table order: Mon(0)..Sun(6)
+        if (rows[rowIndex]) rows[rowIndex].classList.add("is-now");
       }
     }
   } catch (e) { /* no-op */ }

@@ -108,6 +108,8 @@
         <a href="https://www.good2goqc.com/order/restaurant/nallys-kitchen-on-rockingham-menu/26" target="_blank" rel="noopener" class="btn btn--chili">Order Online</a>
       </div>
 
+      <button id="langToggle" class="lang-toggle" type="button" aria-label="Language / Idioma" title="English / Español"><span data-l="en">EN</span><span data-l="es">ES</span></button>
+
       <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="overlay">
         <span></span><span></span><span></span>
       </button>
@@ -143,7 +145,7 @@
       <div class="hero__content">
         <p class="hero__eyebrow" data-reveal>Davenport · Iowa · Family-owned</p>
         <h1 class="hero__title">Nally's <em>Kitchen</em></h1>
-        <p class="hero__tagline" data-reveal>Go south of the border — homemade Mexican food,<br />handmade tortillas, made with love.</p>
+        <p class="hero__tagline" data-reveal data-i18n="0">Go south of the border — homemade Mexican food,<br />handmade tortillas, made with love.</p>
         <div class="hero__cta" data-reveal>
           <a href="https://www.good2goqc.com/order/restaurant/nallys-kitchen-on-rockingham-menu/26" target="_blank" rel="noopener" class="btn btn--corn btn--lg">Order Online</a>
           <a href="#menu" class="btn btn--ghost-light btn--lg">View the Menu</a>
@@ -162,7 +164,7 @@
         <div class="story__grid">
           <div class="story__text">
             <p class="kicker kicker--light" data-reveal>Who We Are</p>
-            <h2 class="story__head" data-reveal>
+            <h2 class="story__head" data-reveal data-i18n="1">
               Built on a love for <em>good food</em><br />and good people.
             </h2>
             <p data-reveal>
@@ -170,13 +172,13 @@
               created out of something simple: a love for homemade food at affordable
               prices, and a love for the people we feed.
             </p>
-            <p data-reveal>
+            <p data-reveal data-i18n="2">
               We make our corn tortillas, salsas and sauces <em>fresh every single day</em> —
               that's the distinctive homemade flavor folks keep coming back for. Cooking with
               family recipes, time-honored techniques and the freshest ingredients, we've become
               a neighborhood favorite, called the best Mexican food in town again and again.
             </p>
-            <p data-reveal>
+            <p data-reveal data-i18n="3">
               Ask anyone about the <em>Chicken Over Rice</em> — that secret spice blend is all ours.
             </p>
             <a href="#signatures" class="link-underline link-underline--light" data-reveal>See the favorites &rarr;</a>
@@ -214,7 +216,7 @@
     <section class="sig" id="signatures">
       <div class="sig__intro">
         <p class="kicker" data-reveal>Local Favorites</p>
-        <h2 class="section-head" data-reveal>The plates people<br />drive across town for.</h2>
+        <h2 class="section-head" data-reveal data-i18n="4">The plates people<br />drive across town for.</h2>
       </div>
 
       <!-- Row 1 -->
@@ -333,7 +335,7 @@
             <div class="m-item"><div class="m-item__head"><span class="m-item__name">Fajitas</span><span class="m-leader"></span><span class="m-item__price">19.50</span></div></div>
           </div>
         </div>
-        <p class="menu__legend"><em class="m-tag m-tag--gf">GF</em> gluten-free option (gorditas, guaraches, enchiladas)</p>
+        <p class="menu__legend" data-i18n="5"><em class="m-tag m-tag--gf">GF</em> gluten-free option (gorditas, guaraches, enchiladas)</p>
       </div>
 
       <!-- APPS & SIDES -->
@@ -386,7 +388,7 @@
             <div class="m-item"><div class="m-item__head"><span class="m-item__name">Small Quesadilla <span class="m-qty">cheese</span></span><span class="m-leader"></span><span class="m-item__price">6.50</span></div></div>
           </div>
         </div>
-        <p class="menu__legend"><em class="m-tag m-tag--v">V</em> vegetarian &nbsp;·&nbsp; <em class="m-tag m-tag--v">VG</em> vegan</p>
+        <p class="menu__legend" data-i18n="6"><em class="m-tag m-tag--v">V</em> vegetarian &nbsp;·&nbsp; <em class="m-tag m-tag--v">VG</em> vegan</p>
       </div>
 
       <!-- SWEETS & DRINKS -->
@@ -469,7 +471,7 @@
     <section class="feat" aria-label="Why eat with us">
       <div class="feat__head">
         <p class="kicker" data-reveal>The Nally's Difference</p>
-        <h2 class="section-head" data-reveal>Homemade, honest &amp; <em>generous</em>.</h2>
+        <h2 class="section-head" data-reveal data-i18n="7">Homemade, honest &amp; <em>generous</em>.</h2>
       </div>
       <div class="feat__grid">
         <div class="feat__item" data-reveal>
@@ -556,7 +558,7 @@
       <div class="visit__grid">
         <div class="visit__info">
           <p class="kicker" data-reveal>Visit Us</p>
-          <h2 class="section-head" data-reveal>Come on in<br />and grab a plate.</h2>
+          <h2 class="section-head" data-reveal data-i18n="8">Come on in<br />and grab a plate.</h2>
 
           <div class="visit__block" data-reveal>
             <h3>Address</h3>
@@ -659,5 +661,96 @@
 
   <!-- Visibility failsafe -->
   <script>setTimeout(function(){document.querySelectorAll(".reveal,[data-reveal]").forEach(function(e){e.classList.add("is-visible")});document.querySelectorAll("[data-hero-line],.hero__line,.hero__title .line>span").forEach(function(e){e.style.opacity="1";e.style.transform="none";e.style.visibility="visible"})},2200);</script>
+
+  <!-- ===== EN/ES language toggle ===== -->
+  <style id="i18n-style">
+    .lang-toggle{display:inline-flex;align-items:center;border:1.4px solid currentColor;border-radius:999px;overflow:hidden;background:transparent;cursor:pointer;padding:0;margin:0 .55rem 0 0;font-family:inherit;vertical-align:middle;opacity:.82;-webkit-tap-highlight-color:transparent;flex:0 0 auto}
+    .lang-toggle:hover{opacity:1}
+    .lang-toggle span{display:block;padding:.36em .56em;font-size:.68rem;font-weight:800;letter-spacing:.04em;color:currentColor;line-height:1;transition:background .15s,color .15s}
+    .lang-toggle span.on{background:#c1272d;color:#fff}
+    @media(max-width:600px){ .lang-toggle{margin-right:.5rem} .lang-toggle span{padding:.34em .48em;font-size:.66rem} }
+    html[lang="es"] .hours tr.is-now td::after{ content:" \00b7  Abierto ahora" !important; }
+  </style>
+  <script id="i18n-script">
+
+  (function(){
+    var TEXT = {"Story": "Historia", "Favorites": "Favoritos", "Menu": "Menú", "Gallery": "Galería", "Visit": "Visítanos", "Order Online": "Ordena en línea", "View the Menu": "Ver el menú", "Scroll": "Desliza", "Davenport · Iowa · Family-owned": "Davenport · Iowa · Negocio familiar", "Who We Are": "Quiénes somos", "Nally's Kitchen is a family-owned Mexican restaurant in Davenport,\n              created out of something simple: a love for homemade food at affordable\n              prices, and a love for the people we feed.": "Nally's Kitchen es un restaurante mexicano familiar en Davenport, nacido de algo sencillo: el amor por la comida casera a precios accesibles y el cariño por la gente a la que servimos.", "See the favorites &rarr;": "Ver los favoritos →", "Made fresh daily": "Hecho fresco a diario", "Handmade tortillas, fresh salsas, fixings on the side": "Tortillas hechas a mano, salsas frescas y guarniciones aparte", "Google rating": "Calificación en Google", "Guest reviews": "Reseñas de clientes", "Family-owned": "Negocio familiar", "Tortillas &amp; salsas daily": "Tortillas y salsas a diario", "Local Favorites": "Favoritos del barrio", "The one guests rave about — steak fried up with cheese, onions and\n            jalapeños, tucked into our handmade tortillas. \"Ammmmmazing,\" in the words of one regular.": "El que todos elogian — carne asada dorada con queso, cebolla y jalapeños, envuelta en nuestras tortillas hechas a mano. \"Ammmmmazing\", en palabras de un cliente de siempre.", "Guest favorite": "Favorito de los clientes", "Stuffed so generously a single burrito makes two meals. Seasoned steak,\n            rice, beans and fresh fixings — \"my belly was happy after eating half,\" said one happy guest.": "Tan relleno que un solo burrito rinde para dos comidas. Carne sazonada, arroz, frijoles y guarniciones frescas — \"quedé satisfecho con solo la mitad\", dijo un cliente feliz.", "Generous portion": "Porción generosa", "Our signature plate — tender grilled chicken over seasoned rice, built on\n            a secret spice blend you won't find anywhere else. The dish that made us a neighborhood name.": "Nuestro platillo estrella — pollo a la parrilla sobre arroz sazonado, con una mezcla secreta de especias que no encontrarás en ningún otro lugar. El platillo que nos hizo famosos en el barrio.", "House signature": "Especialidad de la casa", "Grilled steak or chicken with charred peppers and onions, brought out\n            still sizzling with rice, beans, and a stack of warm handmade tortillas to build your own.": "Carne o pollo a la parrilla con pimientos y cebolla dorados, servidos aún chisporroteando con arroz, frijoles y una torre de tortillas calientes hechas a mano para armar los tuyos.", "Shareable": "Para compartir", "Beef, cheese steak, potato-and-chorizo — even vegetarian and vegan.\n            Folded and fried to order, then finished sweet with guava, apple or cherry cream cheese.": "De res, cheese steak, papa con chorizo — hasta vegetarianas y veganas. Dobladas y fritas al momento, y en versión dulce con guayaba, manzana o cereza con queso crema.", "Vegetarian &amp; vegan options": "Opciones vegetarianas y veganas", "Real Prices · No Guesswork": "Precios reales · Sin sorpresas", "The Menu": "El menú", "Generous portions at honest prices. Tortillas, salsas and sauces\n          made fresh daily — with gluten-free, vegetarian and vegan options throughout.": "Porciones generosas a precios honestos. Tortillas, salsas y guisos hechos frescos a diario — con opciones sin gluten, vegetarianas y veganas en todo el menú.", "Tacos &amp; Entrees": "Tacos y platillos", "Apps &amp; Sides": "Entradas y guarniciones", "Empanadas": "Empanadas", "Sweets &amp; Drinks": "Postres y bebidas", "Catering": "Banquetes", "Tacos": "Tacos", "Single · order of 3 for 9.50": "Individual · orden de 3 por 9.50", "single": "individual", "each": "c/u", "Burritos &amp; Dinners": "Burritos y platos fuertes", "Mexican sandwich": "sándwich mexicano", "meat &amp; cheese": "carne y queso", "Appetizers": "Entradas", "Sides": "Guarniciones", "8 oz": "8 oz", "By the Order": "Por orden", "order of 3": "orden de 3", "Kids Menu": "Menú infantil", "cheese": "queso", "Desserts": "Postres", "Drinks": "Bebidas", "with flavored dips": "con salsitas de sabores", "20 oz": "20 oz", "32 oz · 5.50": "32 oz · 5.50", "Fruit punch, mandarin, lime, strawberry, pineapple": "Ponche de frutas, mandarina, lima, fresa y piña", "12 oz": "12 oz", "Group Meals": "Comidas para grupos", "10+ ppl, per person": "10+ personas, por persona", "no dip": "sin salsa", "With dip · 31.50": "Con salsa · 31.50", "Trays": "Charolas", "Full tray · 73.50": "Charola completa · 73.50", "Catering &amp; group meals — call ahead so we can plan your spread.": "Banquetes y comidas para grupos — llámanos con tiempo para planear tu evento.", "Call to Order": "Llama para ordenar", "From the Kitchen": "Desde la cocina", "A taste in pictures.": "Un antojo en imágenes.", "The Nally's Difference": "La diferencia Nally's", "Handmade Tortillas": "Tortillas hechas a mano", "Corn tortillas pressed by hand and made fresh every day.": "Tortillas de maíz prensadas a mano y hechas frescas cada día.", "Salsas Made Daily": "Salsas hechas a diario", "Salsas and sauces simmered fresh each morning — never from a jar.": "Salsas y guisos preparados frescos cada mañana — nunca de frasco.", "GF, Veg &amp; Vegan": "Sin gluten, veg y vegano", "Gluten-free gorditas and enchiladas, plus veggie &amp; vegan empanadas.": "Gorditas y enchiladas sin gluten, más empanadas vegetarianas y veganas.", "Catering &amp; Groups": "Banquetes y grupos", "Full taco bars, trays and dozens to feed the whole party.": "Barras de tacos, charolas y docenas para alimentar a toda la fiesta.", "Delivery &amp; Takeout": "Entrega y para llevar", "Order online for pickup, or get it delivered across the Quad Cities.": "Ordena en línea para recoger, o pide entrega a domicilio en las Quad Cities.", "On Rockingham Rd": "Sobre Rockingham Rd", "1622 Rockingham Rd — your Davenport neighborhood favorite.": "1622 Rockingham Rd — el favorito de tu barrio en Davenport.", "Word of Mouth": "De boca en boca", "What the neighborhood says.": "Lo que dice el barrio.", "Visit Us": "Visítanos", "Address": "Dirección", "Call &amp; Order": "Llama y ordena", "Order online &rarr;": "Ordena en línea →", "Hours": "Horario", "Monday": "Lunes", "Tuesday": "Martes", "Wednesday": "Miércoles", "Thursday": "Jueves", "Friday": "Viernes", "Saturday": "Sábado", "Sunday": "Domingo", "Closed": "Cerrado", "Get Directions": "Cómo llegar", "Explore": "Explora", "Our Story": "Nuestra historia", "Order &amp; Connect": "Ordena y conéctate", "Homemade Mexican food, handmade tortillas, made with love in Davenport, Iowa.": "Comida mexicana casera, tortillas hechas a mano, preparadas con amor en Davenport, Iowa.", "All Rights Reserved.": "Todos los derechos reservados.", "SNAP/EBT accepted": "Se acepta SNAP/EBT", "Call": "Llamar", "Map": "Mapa"};
+    var ATTR = {"Nally's Kitchen home": "Inicio de Nally's Kitchen", "Primary": "Principal", "Open menu": "Abrir menú", "Menu": "Menú", "Close menu": "Cerrar menú", "Mobile": "Móvil", "Scroll down": "Desliza hacia abajo", "Menu sections": "Secciones del menú", "Previous": "Anterior", "Next": "Siguiente", "Why eat with us": "Por qué comer con nosotros", "5 out of 5 stars": "5 de 5 estrellas", "Quick actions": "Acciones rápidas"};
+    var HTML = {"0": "Cruza la frontera al sabor — comida mexicana casera,<br />tortillas hechas a mano, preparadas con amor.", "1": "Nacido del amor por la <em>buena comida</em><br />y la buena gente.", "2": "Hacemos nuestras tortillas de maíz, salsas y guisos <em>frescos todos los días</em> — ese sabor casero tan especial que hace que la gente regrese. Cocinando con recetas de familia, técnicas de siempre y los ingredientes más frescos, nos hemos vuelto el favorito del barrio, nombrado la mejor comida mexicana de la zona una y otra vez.", "3": "Pregúntale a cualquiera por el <em>Chicken Over Rice</em> — esa mezcla secreta de especias es solo nuestra.", "4": "Los platillos por los que<br />cruzan la ciudad.", "5": "<em class=\"m-tag m-tag--gf\">GF</em> opción sin gluten (gorditas, guaraches, enchiladas)", "6": "<em class=\"m-tag m-tag--v\">V</em> vegetariana &nbsp;·&nbsp; <em class=\"m-tag m-tag--v\">VG</em> vegana", "7": "Casero, honesto y <em>generoso</em>.", "8": "Pásale<br />y sírvete un platillo."};
+    var KEY = "nallys_lang";
+    function dec(s){ try{ var e=document.createElement('textarea'); e.innerHTML=s; return e.value; }catch(_){ return String(s); } }
+    function norm(s){ return dec(String(s)).replace(/\s+/g,' ').trim(); }
+    var T={}, A={};
+    for(var k in TEXT){ if(TEXT.hasOwnProperty(k)){ var kk=norm(k); if(kk) T[kk]=TEXT[k]; } }
+    for(var k2 in ATTR){ if(ATTR.hasOwnProperty(k2)){ var na=norm(k2); if(na) A[na]=ATTR[k2]; } }
+    var lang='en';
+    try{
+      var up=new URLSearchParams(location.search).get('lang');
+      if(up==='es'||up==='en'){ lang=up; localStorage.setItem(KEY,up); }
+      else if(localStorage.getItem(KEY)==='es'){ lang='es'; }
+    }catch(_){ try{ if(localStorage.getItem(KEY)==='es') lang='es'; }catch(e){} }
+    var SKIP={SCRIPT:1,STYLE:1,NOSCRIPT:1,TEXTAREA:1,CODE:1};
+    var tnodes=[], anodes=[], hnodes=[];
+    var seen=(window.WeakSet)?new WeakSet():null;
+    var seenH=(window.WeakSet)?new WeakSet():null;
+    function nkey(v){ return v.replace(/\s+/g,' ').trim(); }
+    function scan(root){
+      if(!root||root.nodeType!==1) return;
+      var w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,null,false), n;
+      while(n=w.nextNode()){
+        var v=n.nodeValue; if(!v) continue; var key=nkey(v); if(!key) continue;
+        var p=n.parentNode; if(!p||SKIP[p.nodeName]) continue;
+        if(!T.hasOwnProperty(key)) continue;
+        if(seen){ if(seen.has(n)) continue; seen.add(n); }
+        tnodes.push({node:n,en:v,key:key});
+      }
+      var names=['placeholder','aria-label','title','alt'];
+      var els=root.querySelectorAll('[placeholder],[aria-label],[title],[alt]');
+      for(var i=0;i<els.length;i++){ var el=els[i];
+        for(var a=0;a<names.length;a++){ var nm=names[a]; if(!el.hasAttribute(nm)) continue;
+          var val=el.getAttribute(nm); var vk=val?nkey(val):''; if(!vk||!A.hasOwnProperty(vk)) continue;
+          anodes.push({el:el,attr:nm,en:val,key:vk});
+        }
+      }
+      var hs=root.querySelectorAll('[data-i18n]');
+      for(var h=0;h<hs.length;h++){ var he=hs[h];
+        if(seenH){ if(seenH.has(he)) continue; seenH.add(he); }
+        var id=he.getAttribute('data-i18n');
+        if(HTML.hasOwnProperty(id)) hnodes.push({el:he,en:he.innerHTML,k:id});
+      }
+    }
+    function repl(orig,es){ var m=orig.match(/^(\s*)([\s\S]*?)(\s*)$/); return m[1]+es+m[3]; }
+    function apply(){
+      for(var i=0;i<tnodes.length;i++){ var o=tnodes[i];
+        o.node.nodeValue=(lang==='es'&&T[o.key]!=null)?repl(o.en,T[o.key]):o.en; }
+      for(var j=0;j<anodes.length;j++){ var e=anodes[j];
+        e.el.setAttribute(e.attr,(lang==='es'&&A[e.key]!=null)?A[e.key]:e.en); }
+      for(var g=0;g<hnodes.length;g++){ var hn=hnodes[g];
+        var want=(lang==='es'&&HTML[hn.k]!=null)?HTML[hn.k]:hn.en;
+        if(hn.el.innerHTML!==want) hn.el.innerHTML=want; }
+      try{ document.documentElement.setAttribute('lang',lang); }catch(_){}
+      var b=document.getElementById('langToggle');
+      if(b){ var ss=b.querySelectorAll('[data-l]'); for(var q=0;q<ss.length;q++){ ss[q].classList.toggle('on',ss[q].getAttribute('data-l')===lang); } }
+    }
+    function setLang(l){ lang=(l==='es')?'es':'en'; try{localStorage.setItem(KEY,lang);}catch(_){}; apply(); }
+    function init(){
+      scan(document.body); apply();
+      var btn=document.getElementById('langToggle');
+      if(btn){ btn.addEventListener('click',function(ev){
+        var el=ev.target; while(el&&el!==btn&&!(el.getAttribute&&el.getAttribute('data-l'))) el=el.parentNode;
+        var l=(el&&el.getAttribute)?el.getAttribute('data-l'):null;
+        setLang(l?l:(lang==='es'?'en':'es'));
+      }); }
+      if(window.MutationObserver){
+        var pending=false;
+        var mo=new MutationObserver(function(){ if(pending) return; pending=true;
+          setTimeout(function(){ pending=false; var b0=tnodes.length+anodes.length+hnodes.length; scan(document.body); if(tnodes.length+anodes.length+hnodes.length!==b0) apply(); },160); });
+        mo.observe(document.body,{childList:true,subtree:true});
+      } else { setTimeout(function(){ scan(document.body); apply(); },1200); setTimeout(function(){ scan(document.body); apply(); },3000); }
+    }
+    if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init); else init();
+  })();
+
+  </script>
 </body>
 </html>
